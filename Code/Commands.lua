@@ -1,5 +1,5 @@
 --[[
-    The slash commands: /rlss and /swingspinner open the settings, or close
+    The slash commands: /ss and /swingspinner open the settings, or close
     them when open.
 ]]
 
@@ -10,7 +10,7 @@ local Setting = env.AX_Modules:Await("@\\Setting")
 SlashCommand.AddFromSchema({
     {
         name     = "RLSWINGSPINNER",
-        command  = { "rlss", "swingspinner" },
+        command  = { "ss", "swingspinner" },
         callback = function() Setting.OpenSettingUI() end
     }
 })
