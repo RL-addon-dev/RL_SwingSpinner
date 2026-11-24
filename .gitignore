@@ -1,0 +1,9 @@
+# AX Libs, its own repo (RL-addon-dev/AX_Libs). The packager pulls it in (.pkgmeta externals).
+libs/
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+__pycache__/

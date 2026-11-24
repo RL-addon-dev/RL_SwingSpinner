@@ -1,0 +1,26 @@
+## Interface: 16001
+## Title: RL: |cffff8000Weapon Swing Spinner|r
+## Notes: Swing timers as small spinning circles, like the gamepad UI's. WoW Forever only.
+## Author: RL
+## Category: Combat
+## OptionalDeps: RL_QoLTweaks
+## X-License: GPL-3.0
+## IconTexture: Interface/AddOns/RL_WeaponSwingSpinner/Art/Icon/logo-1024.png
+## Version: @project-version@
+## SavedVariables: RL_WeaponSwingSpinnerDB, RL_WeaponSwingSpinnerDB_Persistent
+## AddonCompartmentFunc: RLWeaponSwingSpinnerAPI_OpenSettingUI
+
+
+libs\AX_Modules\packages.xml
+
+Preload.lua
+Config.lua
+Locales\Locales.xml
+
+libs\AX_Settings\AX_Settings.xml
+
+Code\Spinners\Spinners.xml
+Code\Setting\Setting_Schema.lua
+Code\Commands.lua
+
+API.lua

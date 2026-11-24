@@ -1,0 +1,98 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\..\..\..\..\Interface\AddOns\Blizzard_SharedXML\UI.xsd">
+	<!-- A copy of the gamepad reticle's swing timer circle (Blizzard_Gamepad GamepadReticle.xml), one per spinner. -->
+	<!-- Like it, a spinner can be the whole circle or one half of it (Combine With Main Hand). -->
+	<Frame name="RL_WeaponSwingSpinnerTemplate" virtual="true" hidden="true" frameStrata="LOW">
+		<Size x="26" y="26"/>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture parentKey="LoadBarBG" atlas="gamepad-press&amp;hold-loadBar-BG" setAllPoints="true"/>
+				<Texture parentKey="LoadBarGlow" atlas="gamepad-press&amp;hold-loadBar-glw-BG" setAllPoints="true"/>
+				<Texture parentKey="LeftLoadBarGlow" atlas="gamepad-press&amp;hold-loadBar-glw-BG" setAllPoints="true"
+					hidden="true"/>
+				<Texture parentKey="RightLoadBarGlow" atlas="gamepad-press&amp;hold-loadBar-glw-BG" setAllPoints="true"
+					hidden="true"/>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture parentKey="LoadBar" atlas="gamepad-press&amp;hold-loadBar" setAllPoints="true">
+					<RadialProgressBar startOffset="0.5"/>
+				</Texture>
+				<Texture parentKey="LeftLoadBar" atlas="gamepad-press&amp;hold-loadBar" setAllPoints="true" hidden="true">
+					<RadialProgressBar endOffset="0.5"/>
+				</Texture>
+				<Texture parentKey="RightLoadBar" atlas="gamepad-press&amp;hold-loadBar" setAllPoints="true" hidden="true">
+					<RadialProgressBar endOffset="0.5" reverse="true"/>
+				</Texture>
+				<Texture parentKey="SpinnerTip" atlas="gamepad-press&amp;hold-spinnerTip" setAllPoints="true"/>
+				<Texture parentKey="LeftSpinnerTip" atlas="gamepad-press&amp;hold-spinnerTip" setAllPoints="true"
+					hidden="true" rotation="180"/>
+				<Texture parentKey="RightSpinnerTip" atlas="gamepad-press&amp;hold-spinnerTip" setAllPoints="true"
+					hidden="true" rotation="180">
+					<TexCoords left="1" right="0"/>
+				</Texture>
+				<MaskTexture hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Color r="0" g="0" b="0" a="1"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+						<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOM"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="LeftLoadBarGlow"/>
+						<MaskedTexture childKey="LeftLoadBar"/>
+						<MaskedTexture childKey="LeftSpinnerTip"/>
+					</MaskedTextures>
+				</MaskTexture>
+				<MaskTexture hWrapMode="CLAMPTOBLACKADDITIVE" vWrapMode="CLAMPTOBLACKADDITIVE">
+					<Color r="0" g="0" b="0" a="1"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativePoint="TOP"/>
+						<Anchor point="BOTTOMRIGHT"/>
+					</Anchors>
+					<MaskedTextures>
+						<MaskedTexture childKey="RightLoadBarGlow"/>
+						<MaskedTexture childKey="RightLoadBar"/>
+						<MaskedTexture childKey="RightSpinnerTip"/>
+					</MaskedTextures>
+				</MaskTexture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString parentKey="Countdown" inherits="GameFontHighlightSmall" hidden="true">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Animations>
+			<!-- They need a duration, or they start finished. It's set again before each swing. -->
+			<AnimationGroup parentKey="Anim" setToFinalAlpha="true">
+				<Rotation childKey="SpinnerTip" order="1" degrees="-360" duration="1">
+					<Origin point="CENTER"/>
+				</Rotation>
+				<RadialProgress childKey="LoadBar" order="1" fromPercent="0" toPercent="1" duration="1"/>
+				<Alpha childKey="LoadBarGlow" order="1" fromAlpha="0" toAlpha="1" duration="1"/>
+			</AnimationGroup>
+			<AnimationGroup parentKey="LeftAnim" setToFinalAlpha="true">
+				<Rotation childKey="LeftSpinnerTip" order="1" degrees="-180" duration="1">
+					<Origin point="CENTER"/>
+				</Rotation>
+				<RadialProgress childKey="LeftLoadBar" order="1" fromPercent="0" toPercent="1" duration="1"/>
+				<Alpha childKey="LeftLoadBarGlow" order="1" fromAlpha="0" toAlpha="1" duration="1"/>
+			</AnimationGroup>
+			<AnimationGroup parentKey="RightAnim" setToFinalAlpha="true">
+				<Rotation childKey="RightSpinnerTip" order="1" degrees="180" duration="1">
+					<Origin point="CENTER"/>
+				</Rotation>
+				<RadialProgress childKey="RightLoadBar" order="1" fromPercent="0" toPercent="1" duration="1"/>
+				<Alpha childKey="RightLoadBarGlow" order="1" fromAlpha="0" toAlpha="1" duration="1"/>
+			</AnimationGroup>
+		</Animations>
+	</Frame>
+
+	<Script file="Spinners_Shared.lua"/>
+	<Script file="Spinners_Display.lua"/>
+	<Script file="Spinners_Swing.lua"/>
+	<Script file="Spinners_EditMode.lua"/>
+	<Script file="Spinners_Reticle.lua"/>
+	<Script file="Spinners.lua"/>
+</Ui>
