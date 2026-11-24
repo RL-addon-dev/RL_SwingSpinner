@@ -2,7 +2,7 @@
 ..\..\..\..\..\..\Interface\AddOns\Blizzard_SharedXML\UI.xsd">
 	<!-- A copy of the gamepad reticle's swing timer circle (Blizzard_Gamepad GamepadReticle.xml), one per spinner. -->
 	<!-- Like it, a spinner can be the whole circle or one half of it (Combine With Main Hand). -->
-	<Frame name="RL_WeaponSwingSpinnerTemplate" virtual="true" hidden="true" frameStrata="LOW">
+	<Frame name="RL_SwingSpinnerTemplate" virtual="true" hidden="true" frameStrata="LOW">
 		<Size x="26" y="26"/>
 		<Layers>
 			<Layer level="BACKGROUND">

@@ -1,4 +1,4 @@
-# RL: Weapon Swing Spinner
+# RL: Swing Spinner
 
 Swing timers as small spinning circles, one for each weapon. They look like the swing timer on
 WoW Forever's gamepad reticle, and work with a mouse and keyboard or the gamepad UI.
@@ -10,8 +10,8 @@ WoW Forever's gamepad reticle, and work with a mouse and keyboard or the gamepad
 1. Install it and log in. The main hand spinner is on by default, and shows while your next
    swing fills.
 2. Open Edit Mode to drag each spinner where you want it.
-3. Change the rest in the settings: `/wss`, `/swingspinner` or `/weaponswingspinner`, the
-   minimap's addon drawer, or Esc → Options → AddOns → Weapon Swing Spinner.
+3. Change the rest in the settings: `/rlss` or `/swingspinner`, the minimap's addon
+   drawer, or Esc → Options → AddOns → Swing Spinner.
 
 ## Features
 
@@ -59,7 +59,7 @@ The game's swing timer bars are left alone, so you can use them alongside the sp
 <details>
 <summary><b>Settings</b></summary>
 
-Everything is in `/wss` (also under Options → AddOns). The tables follow the tabs from top to
+Everything is in `/rlss` (also under Options → AddOns). The tables follow the tabs from top to
 bottom.
 
 **General: Spinner Visibility**
@@ -126,7 +126,7 @@ git clone https://github.com/RL-addon-dev/AX_Libs.git libs
 
 ## Credits and license
 
-RL: Weapon Swing Spinner is free software under the **GNU General Public License v3** (see
+RL: Swing Spinner is free software under the **GNU General Public License v3** (see
 `LICENSE` and `NOTICE`).
 
 - The settings window and its UI toolkit (`libs\AX_Settings`, `libs\AX_Modules`) are based on

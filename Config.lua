@@ -7,8 +7,8 @@
     Loads after Preload.lua and before libs\AX_Settings\AX_Settings.xml, which reads
     env.AX_SettingsOptions while it loads.
 
-        RL_WeaponSwingSpinnerDB              settings
-        RL_WeaponSwingSpinnerDB_Persistent   the spinners' positions, the settings window's
+        RL_SwingSpinnerDB              settings
+        RL_SwingSpinnerDB_Persistent   the spinners' positions, the settings window's
                                              position, and whether an earlier version turned the
                                              game's swing timer bars off
 ]]
@@ -49,8 +49,8 @@ Enum.ReadyStyle = {
 
 -- Defaults
 
-local NAME = "RL_WeaponSwingSpinnerDB"
-local NAME_PERSISTENT = "RL_WeaponSwingSpinnerDB_Persistent"
+local NAME = "RL_SwingSpinnerDB"
+local NAME_PERSISTENT = "RL_SwingSpinnerDB_Persistent"
 
 local SPINNER_KEYS = { "MainHand", "OffHand", "Ranged" }
 local SPINNER_COLORS = {
@@ -232,7 +232,7 @@ CallbackRegistry.Add(WoWClient.Event.OnAddonLoaded, Config.LoadDB)
 
 -- AX_Settings (libs\AX_Settings): read when AX_Settings.xml loads, after this file.
 env.AX_SettingsOptions = {
-    prefix  = "RLWSS",
+    prefix  = "RLSS",
     title   = env.NAME,
     storage = {
         get = Config.Get,

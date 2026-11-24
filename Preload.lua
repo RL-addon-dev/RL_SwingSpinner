@@ -9,8 +9,8 @@ local Path = env.AX_Modules:Import("ax_modules\\path")
 local Utils_Standard = env.AX_Modules:Import("ax_modules\\utils\\standard")
 
 -- Basic addon information
-env.NAME = "RL: |cffff8000Weapon Swing Spinner|r"
-env.NAME_ALT = "Weapon Swing Spinner" -- without the prefix or color (About)
+env.NAME = "RL: |cffff8000Swing Spinner|r"
+env.NAME_ALT = "Swing Spinner" -- without the prefix or color (About)
 env.ICON = Path.Root .. "\\Art\\Icon\\logo-1024.png"
 -- From the .toc. The packager sets it from the release tag. A git checkout still has the
 -- placeholder.

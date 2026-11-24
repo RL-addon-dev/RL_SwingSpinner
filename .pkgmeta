@@ -1,4 +1,4 @@
-package-as: RL_WeaponSwingSpinner
+package-as: RL_SwingSpinner
 
 # AX_Modules and AX_Settings, pulled into libs at the tested tag.
 externals:

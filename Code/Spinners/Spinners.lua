@@ -48,8 +48,8 @@ end
 ---@param info table one of Private.SPINNERS
 ---@return Spinner
 local function CreateSpinner(info)
-    local spinner = CreateFrame("Frame", "RL_WeaponSwingSpinner" .. info.key, UIParent,
-        "RL_WeaponSwingSpinnerTemplate") --[[@as Spinner]]
+    local spinner = CreateFrame("Frame", "RL_SwingSpinner" .. info.key, UIParent,
+        "RL_SwingSpinnerTemplate") --[[@as Spinner]]
     spinner.info = info
     spinner.hasWeapon = false
     spinner.swinging = false
